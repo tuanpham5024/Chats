@@ -1,5 +1,7 @@
 import 'package:chats/components/default_button.dart';
 import 'package:chats/config/size_config.dart';
+import 'package:chats/screens/auth/login/login_screen.dart';
+import 'package:chats/screens/auth/register/register.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -31,12 +33,16 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 DefaultButton(
                   text: "Đăng nhập",
-                  press: () {},
+                  press: () {
+                    Navigator.pushNamed(context, LoginScreen.routName);
+                  },
                 ),
                 SizedBox(height: 20),
                 DefaultButton(
                   text: "Đăng ký",
-                  press: () {},
+                  press: () {
+                    Navigator.pushNamed(context, RegisterScreen.routName);
+                  },
                 ),
               ],
             ),
