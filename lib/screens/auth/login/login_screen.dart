@@ -1,6 +1,7 @@
 import 'package:chats/components/default_button.dart';
 import 'package:chats/config/constants.dart';
 import 'package:chats/config/size_config.dart';
+import 'package:chats/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -92,7 +93,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(height: getProportionateScreenHeight(50),),
-              DefaultButton(text: "Đăng nhập", press: (){},)
+              DefaultButton(text: "Đăng nhập", press: (){
+                Navigator.pushNamed(context, HomeScreen.routName);
+              },)
             ],
           ),
         ),
