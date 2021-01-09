@@ -4,15 +4,14 @@ import 'package:flutter/material.dart';
 import 'config/routs.dart';
 import 'config/theme.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Chats',
       theme: theme(),
       initialRoute: WelcomeScreen.routName,
