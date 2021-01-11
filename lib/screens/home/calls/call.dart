@@ -1,4 +1,5 @@
 import 'package:chats/config/constants.dart';
+import 'package:chats/screens/home/calls/call_screen.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -6,9 +7,10 @@ class CallUsersList extends StatefulWidget {
   String text;
   String image;
   String time;
+  CallType type;
 
   CallUsersList(
-      {@required this.text, @required this.image, @required this.time});
+      {@required this.text, @required this.image, @required this.time, @required this.type});
 
   @override
   _CallUsersListState createState() => _CallUsersListState();
@@ -39,11 +41,22 @@ class _CallUsersListState extends State<CallUsersList> {
                       SizedBox(
                         height: 6,
                       ),
-                      Text(
-                        widget.time,
-                        style: TextStyle(
-                            fontSize: 14, color: Colors.grey.shade500),
-                      ),
+                      Row(
+                        children: <Widget>[
+                          Container(
+                            child: Icon(
+                              // ignore: unrelated_type_equality_checks
+                              widget.type == "IncomingCall" ? Icons.call_made : Icons.call_received, size: 16,
+                            ),
+                          ),
+                          SizedBox(width: 12,),
+                          Text(
+                            widget.time,
+                            style: TextStyle(
+                                fontSize: 14, color: Colors.grey.shade500),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ),
