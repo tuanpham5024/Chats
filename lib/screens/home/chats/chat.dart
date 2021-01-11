@@ -48,7 +48,7 @@ class _ChatUsersListState extends State<ChatUsersList> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(widget.text),
+                        Text(widget.text, style: TextStyle(color: kTextPrimary, fontSize: 15, fontWeight: widget.isMessageRead? FontWeight.normal : FontWeight.bold),),
                         SizedBox(
                           height: 6,
                         ),

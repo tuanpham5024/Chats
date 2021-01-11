@@ -25,7 +25,6 @@ class _ChatBubbleState extends State<ChatBubble> {
           ),
           padding: EdgeInsets.all(16),
           child: Text(widget.chatMessage.message, style: TextStyle(fontSize: 16),),
-
         ),
       ),
     );

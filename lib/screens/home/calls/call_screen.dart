@@ -11,9 +11,12 @@ class CallScreen extends StatefulWidget {
 class _CallScreenState extends State<CallScreen> {
 
   List<CallUsers> callUsers = [
-    CallUsers(text: "Sherlock Holmes", image: "assets/images/logo.png", time: "now"),
-    CallUsers(text: "Sherlock Holmes", image: "assets/images/logo.png", time: "now"),
-    CallUsers(text: "Sherlock Holmes", image: "assets/images/logo.png", time: "now"),
+    CallUsers(
+        text: "Sherlock Holmes", image: "assets/images/logo.png", time: "now"),
+    CallUsers(
+        text: "Lươn Thanh Độ", image: "assets/images/logo.png", time: "03.30 AM"),
+    CallUsers(
+        text: "Watson", image: "assets/images/logo.png", time: "4.30 PM"),
   ];
 
   @override
@@ -24,26 +27,20 @@ class _CallScreenState extends State<CallScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            CustomAppBar(
-              text: "Cuộc gọi gần đây",
-              icon: "assets/images/search.png",
-            ),
-            ListView.builder(
-              itemCount: 0,
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                return CallUsersList(text: callUsers[index].text, image: callUsers[index].image, time: callUsers[index].time);
-              },
-            ),
-            Container(
-              child: Center(
-                child: Text("???"),
-              ),
-            )
-          ],
+        CustomAppBar(
+        text: "Cuộc gọi gần đây",
+          icon: "assets/images/search.png",
         ),
+        ListView.builder(
+          itemCount: callUsers.length,
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          itemBuilder: (context, index) {
+            return CallUsersList(text: callUsers[index].text, image: callUsers[index].image, time: callUsers[index].time);
+          },
+        ),
+        ],
       ),
-    );
+    ),);
   }
 }

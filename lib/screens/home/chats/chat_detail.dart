@@ -32,11 +32,13 @@ class _ChatDetailState extends State<ChatDetail> {
   ];
 
   List<SendMenuItems> menuItems = [
-    SendMenuItems(text: "Ảnh & Videos", icon: Icons.image, color: Colors.amber),
-    SendMenuItems(text: "Tài liệu", icon: Icons.insert_drive_file, color: Colors.blue),
-    SendMenuItems(text: "Âm thanh", icon: Icons.music_note, color: Colors.orange),
-    SendMenuItems(text: "Vị trí", icon: Icons.location_on, color: Colors.green),
-    SendMenuItems(text: "Liên hệ", icon: Icons.person, color: Colors.purple),
+    SendMenuItems(text: "Ảnh & Videos", icons: Icons.image, color: Colors.amber),
+    SendMenuItems(
+        text: "Tài liệu", icons: Icons.insert_drive_file, color: Colors.blue),
+    SendMenuItems(
+        text: "Âm thanh", icons: Icons.music_note, color: Colors.orange),
+    SendMenuItems(text: "Vị trí", icons: Icons.location_on, color: Colors.green),
+    SendMenuItems(text: "Liên hệ", icons: Icons.person, color: Colors.purple),
   ];
 
   void showModal() {
@@ -44,17 +46,18 @@ class _ChatDetailState extends State<ChatDetail> {
         context: context,
         builder: (context) {
           return Container(
-            height: MediaQuery.of(context).size.height/2,
+            height: getProportionateScreenHeight(500),
             color: Color(0xFF237373),
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(20), topLeft: Radius.circular(20)),
+                    topRight: Radius.circular(20),
+                    topLeft: Radius.circular(20)),
               ),
               child: Column(
                 children: <Widget>[
-                  SizedBox(height: getProportionateScreenHeight(10),),
+                  SizedBox(height: getProportionateScreenHeight(20)),
                   Center(
                     child: Container(
                       height: getProportionateScreenHeight(4),
@@ -62,7 +65,7 @@ class _ChatDetailState extends State<ChatDetail> {
                       color: Colors.grey.shade200,
                     ),
                   ),
-                  SizedBox(height: getProportionateScreenHeight(16)),
+                  SizedBox(height: getProportionateScreenHeight(10)),
                   ListView.builder(
                     itemCount: menuItems.length,
                     shrinkWrap: true,
@@ -76,9 +79,13 @@ class _ChatDetailState extends State<ChatDetail> {
                               borderRadius: BorderRadius.circular(30),
                               color: menuItems[index].color.shade100,
                             ),
-                            height: getProportionateScreenHeight(40),
-                            width: getProportionateScreenHeight(40),
-                            child: Icon(menuItems[index].icons, size: 20, color: menuItems[index].color.shade400,),
+                            height: getProportionateScreenHeight(50),
+                            width: getProportionateScreenHeight(50),
+                            child: Icon(
+                              menuItems[index].icons,
+                              size: 20,
+                              color: menuItems[index].color.shade400,
+                            ),
                           ),
                           title: Text(menuItems[index].text),
                         ),

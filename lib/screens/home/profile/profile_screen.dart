@@ -90,8 +90,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                       Icon(
-                        Icons.arrow_forward_ios_outlined,
-                        size: 24,
+                        Icons.toggle_off_outlined,
+                        size: 28,
                         color: Colors.grey.shade500,
                       )
                     ],

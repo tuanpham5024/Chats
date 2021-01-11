@@ -1,3 +1,4 @@
+import 'package:chats/config/constants.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -34,7 +35,7 @@ class _CallUsersListState extends State<CallUsersList> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(widget.text),
+                      Text(widget.text, style: TextStyle(fontWeight: FontWeight.bold, color: kTextPrimary),),
                       SizedBox(
                         height: 6,
                       ),
@@ -42,10 +43,11 @@ class _CallUsersListState extends State<CallUsersList> {
                         widget.time,
                         style: TextStyle(
                             fontSize: 14, color: Colors.grey.shade500),
-                      )
+                      ),
                     ],
                   ),
-                )
+                ),
+                Icon(Icons.phone, color: kPrimaryColor,)
               ],
             ),
           ),
